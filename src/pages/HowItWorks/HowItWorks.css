@@ -1,0 +1,116 @@
+.how-container {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.how-container h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.how-subtitle {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+
+.how-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.how-card {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  position: relative;
+}
+
+.how-step {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  background: #f59e0b;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.how-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.how-card p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* FOOTER (igual ao da Landing) */
+
+.footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 60px 40px 20px;
+  margin-top: 100px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer .logo img {
+  height: 90px;
+}
+
+.footer-brand p {
+  margin: 16px 0;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  margin-bottom: 10px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  font-size: 22px;
+}
+
+.socials a {
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.socials a:hover {
+  color: #f59e0b;
+}

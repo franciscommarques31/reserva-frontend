@@ -1,0 +1,212 @@
+.landing {
+  font-family: system-ui, sans-serif;
+  color: #0f172a;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  margin-top: 5px;
+  height: 110px;
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 140px;
+  width: auto;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav-user {
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  padding: 80px 40px;
+  background: linear-gradient(#fff7ed, #f7fee7);
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-badge {
+  background: #fde68a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin: 20px 0;
+}
+
+.highlight-yellow {
+  color: #f59e0b;
+}
+
+.highlight-green {
+  color: #22c55e;
+}
+
+.cta-button {
+  margin-top: 20px;
+  background: #f59e0b;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.hero-stats strong {
+  font-size: 24px;
+  display: block;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-wrapper img {
+  width: 580px;
+  border-radius: 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card {
+  position: absolute;
+  bottom: 30px;
+  left: -60px;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.heart {
+  font-size: 20px;
+  color: #ef4444;
+}
+
+.services {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.services-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+}
+
+.filter.active {
+  background: #f1f5f9;
+}
+
+.search {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.empty-state {
+  margin-top: 80px;
+  color: #64748b;
+}
+
+.footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 60px 40px 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer .logo img {
+  height: 90px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+
+.socials {
+  display: flex;
+  gap: 12px;
+  font-size: 22px;
+}
+
+.socials a {
+  color: npm #ffffff;
+  transition: color 0.2s ease;
+}
+
+.socials a:hover {
+  color: #098285; /* Facebook blue */
+}
