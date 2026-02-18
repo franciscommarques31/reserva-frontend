@@ -3,50 +3,12 @@
   color: #0f172a;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  margin-top: 5px;
-  height: 110px;
-  background: #fff;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 140px;
-  width: auto;
-}
-
-.navbar-right {
-  display: flex;
-  gap: 16px;
-}
-
-.nav-link {
-  background: none;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.nav-user {
-  border: 1px solid #e5e7eb;
-  padding: 8px 16px;
-  border-radius: 10px;
-  background: white;
-  cursor: pointer;
-}
-
+/* HERO */
 .hero {
   display: flex;
   padding: 80px 40px;
   background: linear-gradient(#fff7ed, #f7fee7);
+  gap: 40px;
 }
 
 .hero-left {
@@ -58,6 +20,7 @@
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
+  display: inline-block;
 }
 
 .hero h1 {
@@ -106,15 +69,16 @@
 }
 
 .hero-image-wrapper img {
-  width: 580px;
+  width: 100%;
+  max-width: 580px;
   border-radius: 40px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
 }
 
 .hero-card {
   position: absolute;
-  bottom: 30px;
-  left: -60px;
+  bottom: 20px;
+  left: 20px;
   background: white;
   padding: 14px 18px;
   border-radius: 16px;
@@ -133,6 +97,7 @@
   color: #ef4444;
 }
 
+/* SERVICES */
 .services {
   padding: 80px 40px;
   text-align: center;
@@ -142,6 +107,7 @@
   display: flex;
   justify-content: space-between;
   margin: 40px 0;
+  gap: 20px;
 }
 
 .filters {
@@ -172,6 +138,7 @@
   color: #64748b;
 }
 
+/* FOOTER */
 .footer {
   background: #020617;
   color: #cbd5f5;
@@ -182,10 +149,11 @@
   display: flex;
   justify-content: space-between;
   gap: 60px;
+  flex-wrap: wrap;
 }
 
 .footer .logo img {
-  height: 90px;
+  height: 70px;
 }
 
 .footer-bottom {
@@ -195,7 +163,6 @@
   opacity: 0.6;
 }
 
-
 .socials {
   display: flex;
   gap: 12px;
@@ -203,10 +170,41 @@
 }
 
 .socials a {
-  color: npm #ffffff;
-  transition: color 0.2s ease;
+  color: #ffffff;
 }
 
-.socials a:hover {
-  color: #098285; /* Facebook blue */
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .services {
+    padding: 40px 20px;
+  }
+
+  .services-bar {
+    flex-direction: column;
+  }
+
+  .filters {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
 }

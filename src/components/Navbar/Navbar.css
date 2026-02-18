@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  margin-top: 5px;
-  height: 110px;
+  padding: 20px 40px;
   background: #fff;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -15,7 +14,7 @@
 }
 
 .logo img {
-  height: 140px;
+  height: 80px;
   width: auto;
 }
 
@@ -37,4 +36,27 @@
   border-radius: 10px;
   background: white;
   cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-link,
+  .nav-user {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
 }

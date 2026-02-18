@@ -8,3 +8,9 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+
+/* Regra global MUITO IMPORTANTE para mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}

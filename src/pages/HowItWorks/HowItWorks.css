@@ -114,3 +114,23 @@
 .socials a:hover {
   color: #f59e0b;
 }
+
+
+@media (max-width: 768px) {
+  .how-container {
+    padding: 40px 20px;
+  }
+
+  .how-container h1 {
+    font-size: 32px;
+  }
+
+  .how-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
