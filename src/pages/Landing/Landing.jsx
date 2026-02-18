@@ -1,7 +1,7 @@
 import "./Landing.css";
 import heroDog from "../../assets/hero-dog.jpeg";
-import Navbar from "../../components/Navbar/Navbar";
 import logo from "../../assets/logo.png";
+import Navbar from "../../components/Navbar/Navbar";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Landing() {
@@ -9,6 +9,7 @@ export default function Landing() {
     <div className="landing">
       <Navbar />
 
+      {/* HERO */}
       <section className="hero">
         <div className="hero-left">
           <span className="hero-badge">Marketplace de serviços para cães</span>
@@ -21,6 +22,7 @@ export default function Landing() {
 
           <p>
             Conectamos donos de cães a prestadores de serviços de passeio e hotel.
+            Encontre profissionais de confiança perto de si.
           </p>
 
           <button className="cta-button">Ver Serviços Disponíveis</button>
@@ -42,28 +44,87 @@ export default function Landing() {
         </div>
 
         <div className="hero-right">
-          <img src={heroDog} alt="Cão feliz" />
+          <div className="hero-image-wrapper">
+            <img src={heroDog} alt="Cão feliz" />
+
+            <div className="hero-card">
+              <span className="heart">❤</span>
+              <div className="hero-card-text">
+                <strong>Reserva confirmada!</strong>
+                <span>Passeio às 15:00</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* SERVICES */}
+      <section className="services">
+        <h2>Serviços Disponíveis</h2>
+        <p>
+          Encontre Pet Sitters e hotéis para cães de confiança na sua área
+        </p>
+
+        <div className="services-bar">
+          <div className="filters">
+            <button className="filter active">Todos</button>
+            <button className="filter">Passeios</button>
+            <button className="filter">Hotel</button>
+          </div>
+
+          <input
+            className="search"
+            placeholder="Pesquisar por cidade..."
+          />
+        </div>
+
+        <div className="empty-state">
+          <div className="paw">🐾</div>
+          <h3>Nenhum serviço encontrado</h3>
+          <p>Tente ajustar os filtros ou pesquisa</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src={logo} alt="PatasFelizes" />
+            <div className="logo">
+              <img src={logo} alt="PatasFelizes" />
+            </div>
+
             <p>
               Somos apaixonados por cães e dedicados a proporcionar os melhores
-              cuidados.
+              passeios e cuidados para o seu melhor amigo.
             </p>
 
             <div className="socials">
-              <FaInstagram />
-              <FaFacebook />
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                <FaInstagram />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+                <FaFacebook />
+              </a>
             </div>
+          </div>
+
+          <div className="footer-col">
+            <h4>Contactos</h4>
+            <p>+351 912 345 678</p>
+            <p>info@patasfelizes.pt</p>
+            <p>Lisboa, Portugal</p>
+          </div>
+
+          <div className="footer-col">
+            <h4>Horário</h4>
+            <p>Segunda - Sexta: 08:00 - 19:00</p>
+            <p>Sábado: 09:00 - 17:00</p>
+            <p>Domingo: 10:00 - 14:00</p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          © 2026 Quem cuida do Meu Patudo
+          © 2026 Quem cuida do Meu Patudo. Todos os direitos reservados.
         </div>
       </footer>
     </div>
