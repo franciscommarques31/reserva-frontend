@@ -7,24 +7,16 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="navbar-left">
-        <div className="logo" onClick={() => navigate("/")}>
-          <img src={logo} alt="PatasFelizes" />
-        </div>
+      <div className="logo" onClick={() => navigate("/")}>
+        <img src={logo} alt="PatasFelizes" />
       </div>
 
       <div className="navbar-right">
-        <button
-          className="nav-link"
-          onClick={() => navigate("/como-funciona")}
-        >
+        <button className="nav-link" onClick={() => navigate("/como-funciona")}>
           Como funciona?
         </button>
 
-        <button
-          className="nav-user"
-          onClick={() => navigate("/register")}
-        >
+        <button className="nav-user" onClick={() => navigate("/register")}>
           Entrar
         </button>
       </div>
