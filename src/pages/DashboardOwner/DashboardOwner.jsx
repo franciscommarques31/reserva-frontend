@@ -1,88 +1,83 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import { getOwnerBusinesses, getOwnerReservations } from "../../api/owner";
+import { useNavigate } from "react-router-dom";
+import "./DashboardOwner.css";
 
 export default function DashboardOwner() {
-  const [businesses, setBusinesses] = useState([]);
-  const [reservations, setReservations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    async function loadData() {
-      try {
-        const biz = await getOwnerBusinesses();
-        const res = await getOwnerReservations();
-        setBusinesses(biz);
-        setReservations(res);
-      } catch (err) {
-        alert(err.message);
-      } finally {
-        setLoading(false);
-      }
+    const storedUser = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    if (!storedUser || !token) {
+      navigate("/login");
+      return;
     }
 
-    loadData();
-  }, []);
+    const parsedUser = JSON.parse(storedUser);
 
-  if (loading) {
-    return (
-      <>
-        <Navbar />
-        <p style={{ padding: 40 }}>A carregar dashboard...</p>
-      </>
-    );
-  }
+    if (parsedUser.role !== "owner") {
+      navigate("/dashboard-client");
+      return;
+    }
+
+    setUser(parsedUser);
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
+  if (!user) return null;
 
   return (
-    <>
-      <Navbar />
+    <div className="dashboard-owner">
+      {/* SIDEBAR */}
+      <aside className="sidebar">
+        <h2>Área da Empresa</h2>
 
-      <div style={{ padding: 40 }}>
-        <h1>Dashboard da Empresa</h1>
+        <button>📦 Serviços</button>
+        <button>📅 Reservas</button>
+        <button>⚙️ Perfil</button>
 
-        {/* NEGÓCIO */}
-        <section style={{ marginTop: 30 }}>
-          <h2>O meu negócio</h2>
-          {businesses.map((b) => (
-            <div key={b._id} style={{ marginTop: 10 }}>
-              <strong>{b.name}</strong> — {b.location}
-            </div>
-          ))}
+        <button className="logout" onClick={handleLogout}>
+          Sair
+        </button>
+      </aside>
+
+      {/* CONTEÚDO */}
+      <main className="content">
+        <h1>Bem-vindo, {user.name}</h1>
+
+        <div className="cards">
+          <div className="card">
+            <h3>Serviços</h3>
+            <p>0 registados</p>
+          </div>
+
+          <div className="card">
+            <h3>Reservas</h3>
+            <p>0 pendentes</p>
+          </div>
+
+          <div className="card">
+            <h3>Avaliação</h3>
+            <p>—</p>
+          </div>
+        </div>
+
+        <section className="section">
+          <h2>Próximos passos</h2>
+          <ul>
+            <li>Criar o primeiro serviço</li>
+            <li>Definir horários</li>
+            <li>Começar a receber reservas</li>
+          </ul>
         </section>
-
-        {/* RESERVAS */}
-        <section style={{ marginTop: 40 }}>
-          <h2>Reservas recebidas</h2>
-
-          {reservations.length === 0 && <p>Sem reservas.</p>}
-
-          {reservations.map((r) => (
-            <div
-              key={r._id}
-              style={{
-                marginTop: 12,
-                padding: 12,
-                border: "1px solid #e5e7eb",
-                borderRadius: 10,
-              }}
-            >
-              <p>
-                <strong>Cliente:</strong> {r.customerName}
-              </p>
-              <p>
-                <strong>Serviço:</strong> {r.service.name}
-              </p>
-              <p>
-                <strong>Data:</strong>{" "}
-                {new Date(r.date).toLocaleString()}
-              </p>
-              <p>
-                <strong>Estado:</strong> {r.status}
-              </p>
-            </div>
-          ))}
-        </section>
-      </div>
-    </>
+      </main>
+    </div>
   );
 }
