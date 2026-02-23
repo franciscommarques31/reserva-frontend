@@ -5,7 +5,9 @@
   background: #f8fafc;
 }
 
-/* SIDEBAR */
+/* ======================
+   SIDEBAR
+====================== */
 .sidebar {
   width: 260px;
   background: #020617;
@@ -17,7 +19,7 @@
 }
 
 .sidebar h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .sidebar button {
@@ -28,6 +30,7 @@
   padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .sidebar button:hover {
@@ -35,21 +38,95 @@
 }
 
 .sidebar .logout {
-  margin-top: auto;
+  margin-top: 10px;
   background: #ef4444;
 }
 
-/* CONTEÚDO */
+/* ======================
+   CONTENT
+====================== */
 .content {
   flex: 1;
   padding: 40px;
 }
 
+.content h1 {
+  margin-bottom: 20px;
+}
+
+/* ======================
+   CALENDAR
+====================== */
+.calendar {
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  max-width: 1100px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.calendar-header strong {
+  text-transform: capitalize;
+}
+
+.calendar-header button {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background: #e2e8f0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.calendar-cell {
+  height: 72px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.calendar-cell:hover {
+  background: #e2e8f0;
+}
+
+/* futuro: dia com reserva */
+.calendar-cell.has-reservation {
+  background: #fde68a;
+}
+
+/* ======================
+   CARDS
+====================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  margin: 30px 0;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -59,12 +136,48 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.section ul {
-  margin-top: 10px;
-  padding-left: 20px;
+/* ======================
+   MODAL
+====================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-/* MOBILE */
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.modal button {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ======================
+   MOBILE
+====================== */
 @media (max-width: 768px) {
   .dashboard-owner {
     flex-direction: column;
@@ -73,10 +186,27 @@
   .sidebar {
     width: 100%;
     flex-direction: row;
+    gap: 10px;
     overflow-x: auto;
   }
 
   .content {
     padding: 20px;
   }
+
+  .calendar {
+    padding: 20px;
+  }
+
+  .calendar-cell {
+    height: 52px;
+    font-size: 14px;
+  }
+}
+
+/* DIA ATUAL (automático) */
+.calendar-cell.today {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  font-weight: 700;
 }
