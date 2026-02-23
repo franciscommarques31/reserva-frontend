@@ -61,7 +61,7 @@ export default function DashboardOwner() {
       <main className="content">
         {activeView === "dashboard" && (
           <>
-            <h1>Bem-vindo, {user.name}</h1>
+            <h1>Bem-vindo, {user.name} {user.surname}</h1>
 
             {/* CALENDÁRIO */}
             <Calendar onSelectDay={handleSelectDay} />
